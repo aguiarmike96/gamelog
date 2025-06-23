@@ -1,0 +1,344 @@
+/*  Paleta de Cores e Fonte */
+:root {
+  --color-bg-light: #f9fafb;
+  --color-bg-dark: #121212;
+  --color-bg-card: #1e1e2f;
+  --color-primary: #2563eb;
+  --color-primary-dark: #1e40af;
+  --color-accent: #00b894;
+  --color-danger: #ef4444;
+  --color-danger-dark: #b91c1c;
+  --color-text-light: #f5f5f5;
+  --color-text-dark: #111827;
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --radius: 8px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --color-button-bg: #ffffff;
+  --color-button-text: #111827;
+  --color-button-border: #ccc;
+  --color-button-hover: rgba(0, 0, 0, 0.05);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-base);
+  transition: all 0.2s ease;
+}
+
+/* Estrutura geral */
+body {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  scroll-behavior: smooth;
+}
+
+body.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+
+  /* sobrescrevendo variáveis no modo escuro */
+  --color-button-bg: #1e1e2f;
+  --color-button-text: #f5f5f5;
+  --color-button-border: #444;
+  --color-button-hover: rgba(255, 255, 255, 0.1);
+}
+
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Tipografia */
+h1, h2, h3 {
+  color: var(--color-primary-dark);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h1.page-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* logo */
+.logo {
+  height: 160px;
+}
+
+.app-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: inherit;
+  min-height: 160px; 
+}
+
+
+.logo-wrapper {
+  text-align: center;
+}
+
+
+.theme-toggle-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+
+/* Theme toggle */
+.theme-toggle {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+body.dark .theme-toggle {
+  border-color: #444;
+  color: var(--color-text-light);
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Barra de busca */
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  width: 60%;
+  font-size: 1rem;
+}
+
+.search-button {
+  padding: 0.5rem 1.2rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Cards de jogo */
+.grid-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.game-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+}
+
+body.dark .game-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid #333;
+}
+
+.game-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-card-image {
+  width: 100%;
+  height: clamp(140px, 18vw, 200px);
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.game-card-title {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.25rem;
+  color: inherit;
+}
+
+.game-card-rating {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+body.dark .game-card-rating {
+  color: #ccc;
+}
+
+/* Botões de favoritos */
+.favorite-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.favorite-button.add {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.favorite-button.add:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.favorite-button.remove {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+.favorite-button.remove:hover {
+  background-color: var(--color-danger-dark);
+}
+
+/* Ajustes tema escuro */
+body.dark .search-input {
+  background-color: #2a2a2a;
+  color: var(--color-text-light);
+  border: 1px solid #444;
+}
+
+body.dark .search-button {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+body.dark .search-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Estilos das telas de Login e Cadastro */
+.auth-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  border: 1px solid var(--color-button-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-container input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  background-color: #fff;
+  color: #111827;
+}
+
+body.dark .auth-container input {
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+  border: 1px solid #444;
+}
+
+.auth-container button {
+  padding: 0.6rem 1rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-container button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Links de login para cadastro e vice-e-versa */
+.auth-container .switch-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.auth-container .switch-link a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-container .switch-link a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo mensagem de erro login */
+.error-message {
+  color: #f87171;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Mensagem do PrivateRoute */
+.private-warning {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  margin: 1.5rem auto;
+  max-width: 500px;
+}

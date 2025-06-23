@@ -1,0 +1,86 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #f5f5f5;
+}
+
+.add-section {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-section input {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.add-section button {
+  padding: 0.75rem 1rem;
+  background-color: #00b894;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-section button:hover {
+  background-color: #019875;
+}
+
+.search-results ul,
+.game-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.search-results li,
+.game-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #1f1f1f;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.search-results button,
+.game-item button {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #ff7675;
+}
+
+.game-item img {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+select {
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* Base para todos os itens */
+.game-item {
+  transition: background-color 0.3s ease;
+}
+
+
