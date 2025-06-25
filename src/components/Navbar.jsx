@@ -63,7 +63,7 @@ const Navbar = () => {
               <FaHeart className="icon" />
               <span>Favoritos</span>
             </NavLink>
-            <NavLink to="/sobre" className="nav-link" onClick={closeMenu}>
+            <NavLink to="/about" className="nav-link" onClick={closeMenu}>
               <FaInfoCircle className="icon" />
               <span>Sobre</span>
             </NavLink>
