@@ -61,7 +61,7 @@ function App() {
                 <Backlog />
               </PrivateRoute>
             } />
-            <Route path="/sobre" element={<About />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
       </AuthProvider>
