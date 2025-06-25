@@ -342,3 +342,17 @@ body.dark .auth-container input {
   margin: 1.5rem auto;
   max-width: 500px;
 }
+
+/* Ajuste responsivo barra de busca para celular */
+@media (max-width: 600px) {
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input,
+  .search-button,
+  .search-select {
+    width: 100%;
+  }
+}
