@@ -88,7 +88,7 @@ const Navbar = () => {
           <FaHeart className="icon" />
           <span>Favoritos</span>
         </NavLink>
-        <NavLink to="/sobre" className="nav-link">
+        <NavLink to="/about" className="nav-link">
           <FaInfoCircle className="icon" />
           <span>Sobre</span>
         </NavLink>
