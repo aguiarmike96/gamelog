@@ -14,7 +14,7 @@ export const getPopularGames = async (page = 1) => {
     const response = await api.get('/games', {
       params: {
         key: API_KEY,
-        ordering: '-rating',
+        ordering: '-relevance',
         page_size: 12, // Tamanho da página
         page, // Página sendo carregada
       },
